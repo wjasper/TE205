@@ -18,9 +18,6 @@ def blink(pwm):
     pwm.stop()
     time.sleep(0.25)
 
-def 
-
-
 ###########################code starts here###########################
 
 x = virtual.PWM(3, 50)
