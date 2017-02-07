@@ -12,15 +12,12 @@ class PWM:
         if not self.on:
             self.on = True
             self.duty = duty
-            print(self.report())
         else:
             print("The light is still on, \"good job\"")
     def ChangeDutyCycle(self, duty):
         self.duty = duty
-        print(self.report())
     def stop(self):
         self.on = False
-        print(self.report())
     def report(self):
         if self.duty > 100 or self.duty < 0:
             return "I think it might be broken, duty = %d" % self.duty
