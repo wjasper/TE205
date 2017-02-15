@@ -17,9 +17,9 @@ def off(list):
 
 ########################program starts here###########################
 
-red = virtual.PWM(3, 50)
-green = virtual.PWM(5, 50)
-blue = virtual.PWM(7, 50)
+red = virtualTri.PWM(3, 50)
+green = virtualTri.PWM(5, 50)
+blue = virtualTri.PWM(7, 50)
 
 colors = [red, green, blue]
 index = 0
