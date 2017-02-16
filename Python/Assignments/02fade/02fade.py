@@ -1,6 +1,6 @@
 import time
 import virtual
-#   The virtual library comes with the class PWM which may
+#   The virtual library comes with the class PWM which may be
 #   called as it is below.  The PWM has several defined functions:
 #   it's constructor PWM(pin, freq) requires the pin and frequency
 #   of the PWM mode.  Keep the duty cycle between 0-100.
