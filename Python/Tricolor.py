@@ -144,13 +144,13 @@ while command != "exit":
         print("could not recognize color")
         
       #conversion using if statements
-      if color = "red":
+      if color == "red":
         rLight[1] = dc
         rLight[0].ChangeDutyCycle(dc)
-      elif color = "green":
+      elif color == "green":
         gLight[1] = dc
         gLight[0].ChangeDutyCycle(dc)
-      elif color = "blue":
+      elif color == "blue":
         bLight[1] = dc
         bLight[0].ChangeDutyCycle(dc)
       else:
