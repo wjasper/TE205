@@ -1,5 +1,5 @@
 import time
-import Rpi.GPIO as get
+import RPi.GPIO as g
 
 LPin = 3 #sets the pin that the led is connected to
 

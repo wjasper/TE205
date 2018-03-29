@@ -1,5 +1,5 @@
 import time
-import Rpi.GPIO as get
+import RPi.GPIO as g
 
 RPIN = 3 #sets the pin that the Red LED is connected to
 GPIN = 4 #sets the pin that the Green LED is connected to
