@@ -15,7 +15,7 @@ for pin in pins:
 lights = []
 for pin in pins:
   # sets a PWM on the selected pin, and sets the duty cycle to 50
-  lights.append((g.PWM(pin, 50), 50))
+  lights.append([g.PWM(pin, 50), 50])
 
 #turns on every light to a duty cycle of 50
 for light in lights:
