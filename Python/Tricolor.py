@@ -111,8 +111,8 @@ while command != "exit":
         bLight[1] = i #increase blue
         bLight[0].ChangeDutyCycle(bLight[1])
         time.sleep(0.02)
-        bLight[1] = 100 - i #decrease red
-        bLight[0].ChangeDutyCycle(bLight[1])
+        gLight[1] = 100 - i #decrease red
+        gLight[0].ChangeDutyCycle(gLight[1])
         time.sleep(0.02)
       #transition from blue to red
       for i in range(rLight[1], 101, 1):
