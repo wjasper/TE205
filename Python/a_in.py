@@ -15,16 +15,12 @@ SPICLK = 18
 SPIMISO = 23
 SPIMOSI = 24
 SPICS = 25
-LED = 26
-
-
  
 # read SPI data from MCP3008 chip, 8 possible adc's (0 thru 7)
 def readadc(adcnum, clockpin, mosipin, misopin, cspin):
     if ((adcnum > 7) or (adcnum < 0)):
         return -1
     GPIO.output(cspin, True)
- 
     GPIO.output(clockpin, False)  # start clock low
     GPIO.output(cspin, False)     # bring CS low
  
@@ -60,23 +56,17 @@ GPIO.setup(SPIMOSI, GPIO.OUT)
 GPIO.setup(SPIMISO, GPIO.IN)
 GPIO.setup(SPICLK, GPIO.OUT)
 GPIO.setup(SPICS, GPIO.OUT)
-GPIO.setup(LED, GPIO.OUT)
-p = GPIO.PWM(LED,80)                  # set duty cycle frequency to 50Hz
-p.start(0)                            # set the duty cycle to 0%, ie. off
 potentiometer_adc = 1
-smooth = 511
  
 try:
     while True:
  
         # read the analog pin
         trim_pot = readadc(potentiometer_adc, SPICLK, SPIMOSI, SPIMISO, SPICS)
-        smooth = smooth * 0.9 + trim_pot * 0.1
-        print("smooth:" + str(int(smooth)))
+        print("trim_pot : " + str(trim_pot))
  
         # hang out and do nothing for a half second
-        time.sleep(0.1)
-        p.ChangeDutyCycle((trim_pot*100/1024 ))
+        time.sleep(0.5)
 
 except  KeyboardInterrupt:
     GPIO.cleanup()
