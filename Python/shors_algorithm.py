@@ -25,6 +25,18 @@ def fastPow(a,b,N):
     a = (a * a) % N
   return ans
 
+def plot_shor(a,r,N):
+  z = list(range(2*r))
+  y = list(range(2*r))
+  y[0] = 1
+  for i in range(1,2*r):
+    y[i] = (y[i-1]*a)%N
+  y = list(a**z0%N for z0 in z)
+  plotter.plot(z,y)
+  plotter.xlabel('z')
+  plotter.ylabel(f'{a}^z mod {N}')
+  plotter.show()
+
 def shor(N, a=0):
   # pick a guess for a
   if a <= 0 or a >= N:
@@ -63,17 +75,8 @@ N = p*q
 print('N = ', N)
 (p,q,a,r) = shor(N)
 print('a = ',a,'  r = ',r,'  p = ',p,' q =',q, '  N = ',N)
+#plot_shor(a,r,N)
 
-#z = list(range(2*r))
-#y = list(range(2*r))
-#y[0] = 1
-#for i in range(1,2*r):
-#    y[i] = (y[i-1]*a)%N
-#y = list(a**z0%N for z0 in z)
-#plotter.plot(z,y)
-#plotter.xlabel('z')
-#plotter.ylabel(f'{a}^z(mod{N})')
-#plotter.show()
 
 
 
