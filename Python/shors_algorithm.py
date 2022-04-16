@@ -2,6 +2,8 @@
 
 import math
 import matplotlib.pyplot as plotter
+from timeit import default_timer as timer
+from datetime import timedelta
 
 def order(a,N):
   # finds the order of a number a**r = 1 mod N
@@ -71,10 +73,13 @@ p = 97117
 q = 98453
 #p = 11
 #q = 23
+start = timer()
 N = p*q
 print('N = ', N)
 (p,q,a,r) = shor(N)
 print('a = ',a,'  r = ',r,'  p = ',p,' q =',q, '  N = ',N)
+end = timer()
+print(timedelta(seconds=end-start))
 #plot_shor(a,r,N)
 
 
