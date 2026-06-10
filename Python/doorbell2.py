@@ -9,7 +9,7 @@ import time
 def Ring(channel):
     GPIO.remove_event_detect(channel)
     p.ChangeDutyCycle(0)   #Turn LED OFF
-    os.system("cvlc --quiet /home/pi/python/Door-chime-sound.mp3 vlc://quit")
+    os.system("cvlc --quiet Door-chime-sound.mp3 vlc://quit")
 #   os.system("mpg321 -q -o alsa /home/pi/Doorbell/Door-chime-sound.mp3")
 #   os.system("echo \"Answer the doorbell\" | mail -s \"Doorbell\" wjasper@ncsu.edu")
     GPIO.add_event_detect(2, GPIO.FALLING, Ring, bouncetime=200)

@@ -18,13 +18,13 @@ chimes = ['Door-chime-sound.mp3', 'Horse.mp3', 'Geese.mp3', 'Sheep.mp3', 'Cow.mp
 
 def Ring():
     RPi.GPIO.output(3, False) #Turn LED Off
-    command = "mpg321 -q -o alsa " +  random.choice(chimes)
+    "cvlc --quiet " + random.choice(chime) + "  vlc://quit"
+#    command = "mpg321 -q -o alsa " +  random.choice(chimes)
     os.system(command)
     while RPi.GPIO.input(2) == RPi.GPIO.LOW:
         pass
     RPi.GPIO.output(3, True)  #Turn LED On
 #   os.system("echo \"Answer the doorbell\" | mail -s \"Doorbell\" wjasper@ncsu.edu")
-
 
 def Blink(n,delay=0.25):
     for i in range(n):
